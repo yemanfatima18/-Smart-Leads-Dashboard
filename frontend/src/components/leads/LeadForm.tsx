@@ -16,7 +16,7 @@ const defaultForm: LeadFormData = { name: '', email: '', status: 'New', source: 
 
 export const LeadForm = ({ initialData, onSubmit, onCancel, isLoading }: LeadFormProps) => {
   const [form, setForm] = useState<LeadFormData>(defaultForm);
-  const [errors, setErrors] = useState<Partial<LeadFormData>>({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
     if (initialData) {
